@@ -11,10 +11,10 @@ COPY data/${INSTALL_DB} ${INSTALL_DB}
 RUN tar xvzf ${INSTALL_TAR}
 RUN tar xvzf ${INSTALL_DB}
 
-WORKDIR ${INSTALL_FILE}
-
 RUN apt-get update
 RUN apt-get install -y bc dc
+
+WORKDIR ${INSTALL_FILE}
 
 RUN ./configure -symlinks /usr/local/bin
 
